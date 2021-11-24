@@ -17,11 +17,20 @@ public class BreweryController {
                 new Brewery(1L,
                         "Bauhaus",
                         "North East Minneapolis",
-                        Drink.BEER),
+                        Drink.BEER,
+                        Type.PILSNER,
+                        "Wonderstuff",
+                        5,
+                        "https://www.bauhausbrewlabs.com/"
+                        ),
                 new Brewery(2L,
                         "Bald Man",
                         "Eagan",
-                        Drink.BEER)
+                        Drink.BEER,
+                        Type.HAZY,
+                        "Tupelo Honey",
+                        5,
+                        "https://www.baldmanbrewing.com/")
         );
         return breweries;
     }

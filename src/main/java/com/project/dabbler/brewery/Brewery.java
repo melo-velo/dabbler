@@ -14,5 +14,9 @@ public class Brewery {
     private String name;
     private String location;
     private Drink drink;
+    private Type type;
+    private String title;
+    private int price;
+    private String url;
 
 }
