@@ -3,7 +3,13 @@ import {
     Radio
 } from "antd";
 
+import {getAllBreweries } from "./client";
+import './App.css';
+
 function App() {
+    getAllBreweries()
+        .then(res => res.json())
+        .then(console.log)
   return (
     <div className="App">
       <Button type='primary'>Hello</Button>
