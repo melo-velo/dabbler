@@ -1,48 +1,30 @@
 package com.project.dabbler.brewery;
 
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/breweries")
 public class BreweryController {
 
-    @GetMapping
-    public List<Brewery> getAllBreweries() {
-        List<Brewery> breweries = Arrays.asList(
-                new Brewery(1L,
-                    "Bald Man",
-                    "Eagan",
-                    Drink.BEER,
-                    Type.HAZY,
-                    "Tupelo Honey",
-                    5,
-                    "https://www.baldmanbrewing.com/"),
-                new Brewery(2L,
-                    "Bauhaus",
-                    "Northeast Minneapolis",
-                    Drink.BEER,
-                    Type.PILSNER,
-                    "Wonderstuff",
-                    5,
-                    "https://www.bauhausbrewlabs.com/"),
-                new Brewery(3L,
-                    "Dangerous Man",
-                    "Northeast Minneapolis",
-                    Drink.BEER,
-                    Type.PORTER,
-                    "Peanut Butter Porter",
-                    10,
-                    "https://dangerousmanbrewing.com/")
-                );
-        return breweries;
+    private final BreweryService breweryService;
+
+    public BreweryController(BreweryService breweryService) {
+        this.breweryService = breweryService;
     }
 
-    /*@PostMapping
-    public void setNewBrewery() {
+    @RequestMapping("api/v1/breweries")
+    public List<Brewery> getAllBreweries() {
+        return breweryService.getAllBreweries();
+    }
 
-        );
-    }*/
+    @RequestMapping("api/v1/breweries/{id}")
+    public Brewery getBrewery(@PathVariable Long id) {
+        return breweryService.getBrewery(id);
+    }
+
+    @RequestMapping(method=RequestMethod.POST, value="api/v1/breweries")
+    public void createBrewery(@RequestBody Brewery brewery) {
+        breweryService.createBrewery(brewery);
+    }
+
 }
