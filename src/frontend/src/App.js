@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { getAllBreweries } from "./client";
-import { PageHeader } from "antd";
 import {
     Layout,
     Menu,
@@ -66,11 +65,10 @@ const columns = [
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
-function App(props) {
+function App() {
     const [breweries, setBreweries] = useState([]);
     const [collapsed, setCollapsed] = useState(false);
     const [fetching, setFetching] = useState(true);
-    const { handleClick } = props;
     const [render, updateRender] = useState(1);
 
     //Manages state of application
@@ -107,7 +105,7 @@ function App(props) {
     }
 
     const style = {
-        fontSize: "30px",
+        fontSize: "40px",
         height: "100px",
         display: "flex",
         alignItems: "center",
@@ -124,61 +122,60 @@ function App(props) {
         updateRender(menu.key);
     }
 
-    return <Layout style={{minHeight: '100vh'}}>
-        <Sider handleClick={handleMenuClick} collapsible collapsed={collapsed}
-               onCollapse={setCollapsed}>
-            <div className="logo"/>
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                <Menu.Item>Dabbler</Menu.Item>
-                <Menu.Item key="1" onClick={handleClick} icon={<PieChartOutlined/>}>
-                    All Breweries
-                </Menu.Item>
-                <Menu.Item key="2" onClick={handleClick} icon={<DesktopOutlined/>}>
-                    Guestbook
-                </Menu.Item>
-                <Menu.Item key="3" onClick={handleClick} icon={<HeatMapOutlined/>}>
-                    Heatmap
-                </Menu.Item>
-                <SubMenu key="sub1" icon={<UserOutlined/>} title="Top 10 Breweries">
-                    <Menu.Item key="3">Bauhaus Brew Labs</Menu.Item>
-                    <Menu.Item key="4">Bald Man Brewing</Menu.Item>
-                    <Menu.Item key="5">Dangerous Man Brewing Co.</Menu.Item>
-                    <Menu.Item key="6">Bent Paddle Brewing Company</Menu.Item>
-                    <Menu.Item key="7">Day Block Brewing Co.</Menu.Item>
-                    <Menu.Item key="8">Modist Brewing</Menu.Item>
-                    <Menu.Item key="9">Tin Whiskers Brewing Co</Menu.Item>
-                    <Menu.Item key="10">Steel Toe Brewing</Menu.Item>
-                    <Menu.Item key="11">Urban Growler Brewing Co.</Menu.Item>
-                    <Menu.Item key="12">Cuyuna Brewing Company</Menu.Item>
-                </SubMenu>
-                <SubMenu key="sub2" icon={<TeamOutlined/>} title="Team">
-                    <Menu.Item key="6">Martin Jaakola</Menu.Item>
-                    <Menu.Item key="8">Davis Anderson</Menu.Item>
-                </SubMenu>
-                <Menu.Item key="9" icon={<FileOutlined/>}>
-                    Files
-                </Menu.Item>
-            </Menu>
-        </Sider>
-        <Layout className="site-layout">
-            <Header className="site-layout-background" style={{padding: 0}}/>
-            <Content style={{margin: '0 16px'}}>
-                <Layout>
-                    <Content>{components[render]}</Content>
-                </Layout>
-                <Breadcrumb style={{margin: '16px 0'}}>
-                    <Breadcrumb.Item>Brewery</Breadcrumb.Item>
-                    <Breadcrumb.Item>Location</Breadcrumb.Item>
-                    <Breadcrumb.Item>Minnesota</Breadcrumb.Item>
-                </Breadcrumb>
-                <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
-                    {renderBreweries()}
-                </div>
-            </Content>
-            <Footer style={{textAlign: 'center'}}>©2021 Created by Martin Jaakola & Davis Anderson</Footer>
+        return <Layout style={{minHeight: '100vh'}}>
+            <Sider collapsible collapsed={collapsed}
+                   onCollapse={setCollapsed}>
+                <div className="logo"/>
+                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+                    <Menu.Item>Dabbler</Menu.Item>
+                    <Menu.Item key="1" icon={<PieChartOutlined/>} onClick={handleMenuClick}>
+                        All Breweries
+                    </Menu.Item>
+                    <Menu.Item key="2" icon={<DesktopOutlined/>} onClick={handleMenuClick}>
+                        Updated Name
+                    </Menu.Item>
+                    <Menu.Item key="3" icon={<HeatMapOutlined/>} onClick={handleMenuClick}>
+                        Heatmap
+                    </Menu.Item>
+                    <SubMenu key="sub1" icon={<UserOutlined/>} title="Top 10 Breweries">
+                        <Menu.Item key="4">Bauhaus Brew Labs</Menu.Item>
+                        <Menu.Item key="5">Bald Man Brewing</Menu.Item>
+                        <Menu.Item key="6">Dangerous Man Brewing Co.</Menu.Item>
+                        <Menu.Item key="7">Bent Paddle Brewing Company</Menu.Item>
+                        <Menu.Item key="8">Day Block Brewing Co.</Menu.Item>
+                        <Menu.Item key="9">Modist Brewing</Menu.Item>
+                        <Menu.Item key="10">Tin Whiskers Brewing Co</Menu.Item>
+                        <Menu.Item key="11">Steel Toe Brewing</Menu.Item>
+                        <Menu.Item key="12">Urban Growler Brewing Co.</Menu.Item>
+                        <Menu.Item key="13">Cuyuna Brewing Company</Menu.Item>
+                    </SubMenu>
+                    <SubMenu key="sub2" icon={<TeamOutlined/>} title="Team">
+                        <Menu.Item key="14">Martin Jaakola</Menu.Item>
+                        <Menu.Item key="15">Davis Anderson</Menu.Item>
+                    </SubMenu>
+                    <Menu.Item key="16" icon={<FileOutlined/>}>
+                        Files
+                    </Menu.Item>
+                </Menu>
+            </Sider>
+            <Layout className="site-layout">
+                <Header className="site-layout-background" style={{padding: 0}}/>
+                <Content style={{margin: '0 16px'}}>
+                    <Layout>
+                        <Content>{components[render]}</Content>
+                    </Layout>
+                    <Breadcrumb style={{margin: '16px 0'}}>
+                        <Breadcrumb.Item>Brewery</Breadcrumb.Item>
+                        <Breadcrumb.Item>Location</Breadcrumb.Item>
+                        <Breadcrumb.Item>Minnesota</Breadcrumb.Item>
+                    </Breadcrumb>
+                    <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
+                        {renderBreweries()}
+                    </div>
+                </Content>
+                <Footer style={{textAlign: 'center'}}>©2021 Created by Martin Jaakola & Davis Anderson</Footer>
+            </Layout>
         </Layout>
-    </Layout>
-
 }
 
 export default App;
