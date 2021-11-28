@@ -16,7 +16,7 @@ public class BreweryController {
         List<Brewery> breweries = Arrays.asList(
                 new Brewery(1L,
                         "Bauhaus",
-                        "North East Minneapolis",
+                        "Northeast Minneapolis",
                         Drink.BEER,
                         Type.PILSNER,
                         "Wonderstuff",
@@ -30,7 +30,15 @@ public class BreweryController {
                         Type.HAZY,
                         "Tupelo Honey",
                         5,
-                        "https://www.baldmanbrewing.com/")
+                        "https://www.baldmanbrewing.com/"),
+                new Brewery(3L,
+                        "Dangerous Man",
+                        "Northeast Minneapolis",
+                        Drink.BEER,
+                        Type.PORTER,
+                        "Peanut Butter Porter",
+                        10,
+                        "https://dangerousmanbrewing.com/")
         );
         return breweries;
     }

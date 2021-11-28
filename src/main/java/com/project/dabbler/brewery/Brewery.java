@@ -20,10 +20,10 @@ public class Brewery {
     private Drink drink;
     //What type of beer it is or other for non-alcoholic beverages
     private Type type;
-    //Name of beer
+    //Name of favorite beer
     private String title;
-    //Price of beer
-    private int price;
+    //Beers on tap
+    private int numberOfBeers;
     //Website address
     private String url;
 

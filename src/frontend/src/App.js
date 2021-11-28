@@ -22,12 +22,12 @@ const { SubMenu } = Menu;
 
 const columns = [
     {
-        title: 'Id',
+        title: 'Position',
         dataIndex: 'id',
         key: 'id',
     },
     {
-        title: 'Name',
+        title: 'Brewery Name',
         dataIndex: 'name',
         key: 'name',
     },
@@ -37,24 +37,24 @@ const columns = [
         key: 'location',
     },
     {
-        title: 'Drink',
+        title: 'Drink Type',
         dataIndex: 'drink',
         key: 'drink',
     },
     {
-        title: 'Type',
+        title: 'Type of Drink',
         dataIndex: 'type',
         key: 'type',
     },
     {
-        title: 'Title',
+        title: 'Name of Drink',
         dataIndex: 'title',
         key: 'title',
     },
     {
-        title: 'Price',
-        dataIndex: 'price',
-        key: 'price',
+        title: 'Total Beers on Tap',
+        dataIndex: 'numberOfBeers',
+        key: 'numberOfBeers',
     },
     {
         title: 'Url',
@@ -96,7 +96,7 @@ function App() {
             dataSource={breweries}
             columns={columns}
             bordered
-            title={() => 'Breweries'}
+            title={() => 'Minnesota Brewery Power Ranking: Top 10'}
             pagination={{ pageSize: 50 }}
             scroll={{ y: 240 }}
             rowKey={(brewery) => brewery.id}
@@ -119,9 +119,9 @@ function App() {
                     Heatmap
                 </Menu.Item>
                 <SubMenu key="sub1" icon={<UserOutlined/>} title="Top 3 Breweries in MN">
-                    <Menu.Item key="3">Dangerous Man</Menu.Item>
-                    <Menu.Item key="4">Bauhaus</Menu.Item>
-                    <Menu.Item key="5">Bald Man</Menu.Item>
+                    <Menu.Item key="3">Bauhaus</Menu.Item>
+                    <Menu.Item key="4">Bald Man</Menu.Item>
+                    <Menu.Item key="5">Dangerous Man</Menu.Item>
                 </SubMenu>
                 <SubMenu key="sub2" icon={<TeamOutlined/>} title="Team">
                     <Menu.Item key="6">Martin Jaakola</Menu.Item>
