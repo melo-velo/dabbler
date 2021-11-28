@@ -4,7 +4,7 @@ import {
     Layout,
     Menu,
     Breadcrumb,
-    Table,
+    Table, Spin, Empty,
 } from 'antd';
 
 import {
@@ -12,7 +12,7 @@ import {
     PieChartOutlined,
     FileOutlined,
     TeamOutlined,
-    UserOutlined,
+    UserOutlined, LoadingOutlined, HeatMapOutlined,
 } from '@ant-design/icons';
 
 import './App.css';
@@ -63,9 +63,12 @@ const columns = [
     },
 ];
 
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
+
 function App() {
     const [breweries, setBreweries] = useState([]);
     const [collapsed, setCollapsed] = useState(false);
+    const [fetching, setFetching] = useState(true);
 
     //Manages state of application
     const fetchBreweries = () =>
@@ -74,6 +77,7 @@ function App() {
             .then(data => {
                 console.log(data);
                 setBreweries(data);
+                setFetching(false);
             })
 
     useEffect(() => {
@@ -82,12 +86,21 @@ function App() {
     }, []);
 
     const renderBreweries = () => {
+        if (fetching) {
+            return <Spin indicator={antIcon} />
+        }
         if (breweries.length <= 0) {
-            return "no data available";
+            return <Empty />;
         }
         return <Table
             dataSource={breweries}
-            columns={columns}/>;
+            columns={columns}
+            bordered
+            title={() => 'Breweries'}
+            pagination={{ pageSize: 50 }}
+            scroll={{ y: 240 }}
+            rowKey={(brewery) => brewery.id}
+        />;
     }
 
     return <Layout style={{minHeight: '100vh'}}>
@@ -97,15 +110,18 @@ function App() {
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                 <Menu.Item>Dabbler</Menu.Item>
                 <Menu.Item key="1" icon={<PieChartOutlined/>}>
-                    Feature 1
+                    All Breweries
                 </Menu.Item>
                 <Menu.Item key="2" icon={<DesktopOutlined/>}>
-                    Feature 2
+                    Add New Brewery
                 </Menu.Item>
-                <SubMenu key="sub1" icon={<UserOutlined/>} title="Menu">
-                    <Menu.Item key="3">Brewery 1</Menu.Item>
-                    <Menu.Item key="4">Brewery 2</Menu.Item>
-                    <Menu.Item key="5">Brewery 3</Menu.Item>
+                <Menu.Item key="3" icon={<HeatMapOutlined/>}>
+                    Heatmap
+                </Menu.Item>
+                <SubMenu key="sub1" icon={<UserOutlined/>} title="Top 3 Breweries in MN">
+                    <Menu.Item key="3">Dangerous Man</Menu.Item>
+                    <Menu.Item key="4">Bauhaus</Menu.Item>
+                    <Menu.Item key="5">Bald Man</Menu.Item>
                 </SubMenu>
                 <SubMenu key="sub2" icon={<TeamOutlined/>} title="Team">
                     <Menu.Item key="6">Martin Jaakola</Menu.Item>
