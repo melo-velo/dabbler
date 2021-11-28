@@ -11,4 +11,6 @@ This project is small-scale and highly localized, but may scale up if users beco
 
 Happy dabbling!
 
+Test commit database
+
 ~ Melo-velo
