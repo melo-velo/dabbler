@@ -42,12 +42,12 @@ const columns = [
         key: 'drink',
     },
     {
-        title: 'Type of Drink',
+        title: 'Known For',
         dataIndex: 'type',
         key: 'type',
     },
     {
-        title: 'Name of Drink',
+        title: 'Top Drink',
         dataIndex: 'title',
         key: 'title',
     },
@@ -70,6 +70,7 @@ function App() {
     const [collapsed, setCollapsed] = useState(false);
     const [fetching, setFetching] = useState(true);
     const [render, updateRender] = useState(1);
+    const [implement, updateElement] = useState(1);
 
     //Manages state of application
     const fetchBreweries = () =>
@@ -118,8 +119,15 @@ function App() {
         3: <div style={style}>Heatmap</div>
     };
 
+    const elements = {
+        1: <div style={style}>Home screen</div>,
+        2: <div style={style}>Function to add brewery via post method</div>,
+        3: <div style={style}>Import Google Maps</div>
+    }
+
     const handleMenuClick = menu => {
         updateRender(menu.key);
+        updateElement(menu.key);
     }
 
         return <Layout style={{minHeight: '100vh'}}>
@@ -132,7 +140,7 @@ function App() {
                         All Breweries
                     </Menu.Item>
                     <Menu.Item key="2" icon={<DesktopOutlined/>} onClick={handleMenuClick}>
-                        Updated Name
+                        Guestbook
                     </Menu.Item>
                     <Menu.Item key="3" icon={<HeatMapOutlined/>} onClick={handleMenuClick}>
                         Heatmap
@@ -163,6 +171,7 @@ function App() {
                 <Content style={{margin: '0 16px'}}>
                     <Layout>
                         <Content>{components[render]}</Content>
+                        <Content>{elements[implement]}</Content>
                     </Layout>
                     <Breadcrumb style={{margin: '16px 0'}}>
                         <Breadcrumb.Item>Brewery</Breadcrumb.Item>

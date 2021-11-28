@@ -1,8 +1,6 @@
 package com.project.dabbler.brewery;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +12,7 @@ public class BreweryController {
     @GetMapping
     public List<Brewery> getAllBreweries() {
         List<Brewery> breweries = Arrays.asList(
-                new Brewery(2L,
+                new Brewery(1L,
                     "Bald Man",
                     "Eagan",
                     Drink.BEER,
@@ -22,7 +20,7 @@ public class BreweryController {
                     "Tupelo Honey",
                     5,
                     "https://www.baldmanbrewing.com/"),
-                new Brewery(1L,
+                new Brewery(2L,
                     "Bauhaus",
                     "Northeast Minneapolis",
                     Drink.BEER,
@@ -41,4 +39,10 @@ public class BreweryController {
                 );
         return breweries;
     }
+
+    /*@PostMapping
+    public void setNewBrewery() {
+
+        );
+    }*/
 }
