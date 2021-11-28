@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getAllBreweries } from "./client";
+import { PageHeader } from "antd";
 import {
     Layout,
     Menu,
@@ -17,7 +18,7 @@ import {
 
 import './App.css';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer, Sider} = Layout;
 const { SubMenu } = Menu;
 
 const columns = [
@@ -65,10 +66,12 @@ const columns = [
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 
-function App() {
+function App(props) {
     const [breweries, setBreweries] = useState([]);
     const [collapsed, setCollapsed] = useState(false);
     const [fetching, setFetching] = useState(true);
+    const { handleClick } = props;
+    const [render, updateRender] = useState(1);
 
     //Manages state of application
     const fetchBreweries = () =>
@@ -103,19 +106,37 @@ function App() {
         />;
     }
 
+    const style = {
+        fontSize: "30px",
+        height: "100px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+    };
+
+    const components = {
+        1: <div style={style}>All Breweries</div>,
+        2: <div style={style}>Guestbook</div>,
+        3: <div style={style}>Heatmap</div>
+    };
+
+    const handleMenuClick = menu => {
+        updateRender(menu.key);
+    }
+
     return <Layout style={{minHeight: '100vh'}}>
-        <Sider collapsible collapsed={collapsed}
+        <Sider handleClick={handleMenuClick} collapsible collapsed={collapsed}
                onCollapse={setCollapsed}>
             <div className="logo"/>
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                 <Menu.Item>Dabbler</Menu.Item>
-                <Menu.Item key="1" icon={<PieChartOutlined/>}>
+                <Menu.Item key="1" onClick={handleClick} icon={<PieChartOutlined/>}>
                     All Breweries
                 </Menu.Item>
-                <Menu.Item key="2" icon={<DesktopOutlined/>}>
+                <Menu.Item key="2" onClick={handleClick} icon={<DesktopOutlined/>}>
                     Guestbook
                 </Menu.Item>
-                <Menu.Item key="3" icon={<HeatMapOutlined/>}>
+                <Menu.Item key="3" onClick={handleClick} icon={<HeatMapOutlined/>}>
                     Heatmap
                 </Menu.Item>
                 <SubMenu key="sub1" icon={<UserOutlined/>} title="Top 10 Breweries">
@@ -142,6 +163,9 @@ function App() {
         <Layout className="site-layout">
             <Header className="site-layout-background" style={{padding: 0}}/>
             <Content style={{margin: '0 16px'}}>
+                <Layout>
+                    <Content>{components[render]}</Content>
+                </Layout>
                 <Breadcrumb style={{margin: '16px 0'}}>
                     <Breadcrumb.Item>Brewery</Breadcrumb.Item>
                     <Breadcrumb.Item>Location</Breadcrumb.Item>
