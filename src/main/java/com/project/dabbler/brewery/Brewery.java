@@ -2,6 +2,8 @@ package com.project.dabbler.brewery;
 
 import lombok.*;
 
+import java.net.URL;
+
 @ToString
 @Getter
 @Setter
@@ -10,7 +12,6 @@ import lombok.*;
 @AllArgsConstructor
 
 public class Brewery {
-
     private Long id;
     // Name of Brewery
     private String name;
@@ -26,5 +27,4 @@ public class Brewery {
     private int numberOfBeers;
     //Website address
     private String url;
-
 }

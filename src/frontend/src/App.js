@@ -96,7 +96,7 @@ function App() {
             dataSource={breweries}
             columns={columns}
             bordered
-            title={() => 'Minnesota Brewery Power Ranking: Top 10'}
+            title={() => 'Minnesota Brewery Power Ranking: Top 100'}
             pagination={{ pageSize: 50 }}
             scroll={{ y: 240 }}
             rowKey={(brewery) => brewery.id}
@@ -113,15 +113,22 @@ function App() {
                     All Breweries
                 </Menu.Item>
                 <Menu.Item key="2" icon={<DesktopOutlined/>}>
-                    Add New Brewery
+                    Guestbook
                 </Menu.Item>
                 <Menu.Item key="3" icon={<HeatMapOutlined/>}>
                     Heatmap
                 </Menu.Item>
-                <SubMenu key="sub1" icon={<UserOutlined/>} title="Top 3 Breweries in MN">
-                    <Menu.Item key="3">Bauhaus</Menu.Item>
-                    <Menu.Item key="4">Bald Man</Menu.Item>
-                    <Menu.Item key="5">Dangerous Man</Menu.Item>
+                <SubMenu key="sub1" icon={<UserOutlined/>} title="Top 10 Breweries">
+                    <Menu.Item key="3">Bauhaus Brew Labs</Menu.Item>
+                    <Menu.Item key="4">Bald Man Brewing</Menu.Item>
+                    <Menu.Item key="5">Dangerous Man Brewing Co.</Menu.Item>
+                    <Menu.Item key="6">Bent Paddle Brewing Company</Menu.Item>
+                    <Menu.Item key="7">Day Block Brewing Co.</Menu.Item>
+                    <Menu.Item key="8">Modist Brewing</Menu.Item>
+                    <Menu.Item key="9">Tin Whiskers Brewing Co</Menu.Item>
+                    <Menu.Item key="10">Steel Toe Brewing</Menu.Item>
+                    <Menu.Item key="11">Urban Growler Brewing Co.</Menu.Item>
+                    <Menu.Item key="12">Cuyuna Brewing Company</Menu.Item>
                 </SubMenu>
                 <SubMenu key="sub2" icon={<TeamOutlined/>} title="Team">
                     <Menu.Item key="6">Martin Jaakola</Menu.Item>
@@ -138,14 +145,13 @@ function App() {
                 <Breadcrumb style={{margin: '16px 0'}}>
                     <Breadcrumb.Item>Brewery</Breadcrumb.Item>
                     <Breadcrumb.Item>Location</Breadcrumb.Item>
+                    <Breadcrumb.Item>Minnesota</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
                     {renderBreweries()}
                 </div>
             </Content>
-            <Footer style={{textAlign: 'center'}}>©2021 Created by Martin Jaakola & Davis Anderson
-                <br/>
-                Original Layout: Ant Design</Footer>
+            <Footer style={{textAlign: 'center'}}>©2021 Created by Martin Jaakola & Davis Anderson</Footer>
         </Layout>
     </Layout>
 
