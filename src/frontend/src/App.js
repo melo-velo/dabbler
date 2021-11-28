@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getAllBreweries } from "./client";
+import { createBrewery } from "./client";
+
 import {
     Layout,
     Menu,
@@ -74,6 +76,7 @@ function App() {
 
     //Manages state of application
     const fetchBreweries = () =>
+        createBrewery()
         getAllBreweries()
             .then(res => res.json())
             .then(data => {

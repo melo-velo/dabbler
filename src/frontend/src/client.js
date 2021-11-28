@@ -13,3 +13,7 @@ const checkStatus = res => {
 export const getAllBreweries = () =>
     fetch("api/v1/breweries")
     .then(checkStatus);
+
+export const createBrewery = () =>
+    fetch("api/v1/breweries")
+    .then(checkStatus);
