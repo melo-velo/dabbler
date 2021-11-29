@@ -140,7 +140,7 @@ function App() {
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                     <Menu.Item>Dabbler</Menu.Item>
                     <Menu.Item key="1" icon={<PieChartOutlined/>} onClick={handleMenuClick}>
-                        All Breweries
+                        All Breweries TEST
                     </Menu.Item>
                     <Menu.Item key="2" icon={<DesktopOutlined/>} onClick={handleMenuClick}>
                         Guestbook
