@@ -16,17 +16,18 @@ const Brewery = () => {
 
     if(brewery){
         return(
-            <div>
-                    {brewery.map( (brewery) => (
-                        <ul>
-                            <li className="brewery-head" key={brewery.id}>{brewery.name}</li>
-                            <li>{brewery.location}</li>
-                            <li>{brewery.drink}</li>
-                            <li>{brewery.title}</li>
-                            <li>{brewery.type}</li>
-                        </ul>
-
-                        )
+            <div className="brewery-grid">
+                    {brewery.map( (brewery) =>
+                        <div className="brewery-container">
+                            <a href={brewery.url} className='brewery-link' target='_blank'>
+                            <h1 className="brewery-rank">{brewery.id}</h1>
+                            <h3 className="brewery-head" key={brewery.id}>{brewery.name}</h3>
+                            <h3>Location: {brewery.location}</h3>
+                            <h3>Most popular: {brewery.title}</h3>
+                            <h3>Drink type: {brewery.type}</h3>
+                            <h3>Known for: {brewery.drink}</h3>
+                            </a>
+                        </div>
                         )
                     }
             </div>
