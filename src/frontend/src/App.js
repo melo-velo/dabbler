@@ -3,6 +3,7 @@ import { getAllBreweries } from "./client";
 import { createBrewery } from "./client";
 
 import {
+    Button,
     Layout,
     Menu,
     Breadcrumb,
@@ -184,6 +185,8 @@ function App() {
                     <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
                         {renderBreweries()}
                     </div>
+                    <br/>
+                    <Button type="primary">Add Brewery</Button>
                 </Content>
                 <Footer style={{textAlign: 'center'}}>©2021 Created by Martin Jaakola & Davis Anderson</Footer>
             </Layout>
