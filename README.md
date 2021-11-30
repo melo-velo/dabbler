@@ -1,5 +1,6 @@
 # dabbler
-Website that provides beer recommendations based on beerology and user preferences. It will use Spring Boot & React architecture and nosql as the database backend with data distributed via docker containers. 
+
+Website that provides beer recommendations based on beerology and user preferences. It will use Spring Boot & React architecture and nosql as the database backend with data distributed via docker containers.
 
 This website aims to solve the central problem of the saturated microbrew market in Minnesota, in the United States. With so many options, it is difficult to select a beer one will like from a brewery let alone remember past selections.
 
@@ -12,3 +13,4 @@ This project is small-scale and highly localized, but may scale up if users beco
 Happy dabbling!
 
 ~ Melo-velo
+~ Davis-Anderson
