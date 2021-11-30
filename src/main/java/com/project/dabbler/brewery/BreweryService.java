@@ -35,8 +35,25 @@ public class BreweryService {
                             Type.PORTER,
                             "Peanut Butter Porter",
                             10,
-                            "https://dangerousmanbrewing.com/")
+                            "https://dangerousmanbrewing.com/"),
+                    new Brewery(4L,
+                            "Modist Brewing Co.",
+                            "Northloop Minneapolis",
+                            Drink.BEER,
+                            Type.IPA,
+                            "DDH Strata Crystals",
+                            17,
+                            "https://modistbrewing.com/"),
+                    new Brewery(5L,
+                            "Inbound Brewing Co.",
+                            "Northloop Minneapolis",
+                            Drink.BEER,
+                            Type.KOLSCH,
+                            "Laser Loon",
+                            15,
+                            "https://inboundbrew.co")
                     )
+
             );
 
     public List<Brewery> getAllBreweries() {
