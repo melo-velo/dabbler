@@ -11,7 +11,7 @@ const Navbar = () => {
                     <li><a href='#'>Contact</a></li>
                 </ul>
             </div>
-            <a className='nav-cta' href="#"><button>Sign in</button></a>
+            <a className='nav-cta' href="#"><button>Sign Out</button></a>
         </div>
     )
 }
