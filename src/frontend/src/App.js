@@ -1,11 +1,11 @@
 import './App.css';
 import Brewery from "./components/Brewery";
-import Navbar from './components/Navbar'
+import Hero from "./components/Hero";
 
 function App() {
     return(
         <div>
-            <Navbar />
+            <Hero />
             <Brewery />
         </div>
     )

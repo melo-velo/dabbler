@@ -16,7 +16,11 @@ const Brewery = () => {
 
     if(brewery){
         return(
-            <div className="brewery-grid">
+            <>
+            <div className='brewery-description-container'>
+                <p className='brewery-description-text'>Minnesota's top breweries of 2021</p>
+            </div>
+            <div className="brewery-grid" id='rankings'>
                     {brewery.map( (brewery) =>
                         <div className="brewery-container">
                             <a href={brewery.url} className='brewery-link' target='_blank'>
@@ -31,6 +35,7 @@ const Brewery = () => {
                         )
                     }
             </div>
+            </>
         )
     }
 
