@@ -5,6 +5,8 @@ import React, {useEffect, useState} from "react";
 const Brewery = () => {
     const url="api/v1/breweries"
     const [brewery, setBrewery] = useState(null)
+    // const [fix, setFix] = useState(false)
+
 
     useEffect(() => {
         axios.get(url)
@@ -13,6 +15,7 @@ const Brewery = () => {
                 console.log(response.data)
             })
     }, [])
+
 
     if(brewery){
         return(
