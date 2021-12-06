@@ -2,79 +2,29 @@ html {
   scroll-behavior: smooth;
 }
 
-/*Nav Styles*/
-.nav-container{
-  box-sizing: border-box;
-  margin: 0;
-  background-color: #293241;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  /*padding: 10px ;*/
-}
-
-.nav-logo{
-  color: #e0fbfc;
-  font-size: 2.5em;
-  cursor: pointer;
-}
-
-.nav-links{
-  list-style: none;
-  font-size: 22px;
-  padding-top: 15px;
-}
-
-.nav-links li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-
-.nav-links a{
-  text-decoration: none;
-  color: #e0fbfc;
-}
-
-.nav-links li a{
-  transition: all 0.3s ease 0s;
-}
-.nav-links li a:hover{
-  color: #98c1d9;
-}
-
-.nav-cta button {
-  font-size: 20px;
-  color: #293241;
-  padding: 9px 25px;
-  background-color: rgba(224, 251, 252, 1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.nav-cta button:hover{
-  background-color: rgba(224, 251, 252, 0.8);
-}
-
 /*HERO STYLES*/
+
 .hero-image{
   width: 100%;
-  opacity: 0.85;
+  opacity: 1;
 }
+
 .hero-text {
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: black;
+  color: white;
   font-size: 3rem;
 }
 
 .hero-title{
   font-size: 5rem;
   font-weight: bold;
+}
+.hero-description{
+  color: white;
 }
 
 .hero-button{
@@ -144,23 +94,48 @@ html {
   display: block;
 }
 .create h2 {
-  font-size: 20px;
+  font-size: 3rem;
   color: #ee6c4d;
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
 }
 .create input, .create textarea, .create select {
   width: 100%;
   padding: 6px 10px;
-  margin: 10px 0;
+  margin: 15px 0;
   border: 1px solid #ddd;
   box-sizing: border-box;
   display: block;
 }
 .create button {
-  background: #ee6c4d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
+  background-color: rgba(238, 108, 77, .0);
+  color: #ee6c4d;
+  border: 3px solid;
+  padding: 5px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  margin: 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease 0s;
+}
+
+.create button:hover{
+  background-color: rgba(238, 108, 77, .3);
+}
+
+/*ABOUT STYLES*/
+.about-container{
+  padding: 5%;
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+
+.about-heading-container{
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ee6c4d;
+}
+
+.about-text-container{
+  font-size: 1.5rem;
 }

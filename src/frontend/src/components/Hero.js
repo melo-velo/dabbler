@@ -7,9 +7,10 @@ const Hero = () => {
             <img src={hero} className='hero-image' alt='Hero image'/>
             <div className='hero-text'>
                 <p className="hero-title">Dabbler</p>
-                <br/>
-                <p>Minnesota's most prestigious brewery rankings.</p>
+                <p className='hero-description'>Minnesota's most prestigious brewery rankings.</p>
                 <a href='#rankings'><button className='hero-button'>The List</button></a>
+                <a href='#create'><button className='hero-button'>Create</button></a>
+                <a href='#about'><button className='hero-button'>About</button></a>
             </div>
         </div>
     )
