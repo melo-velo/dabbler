@@ -1,16 +1,26 @@
 # dabbler
 
-Website that provides beer recommendations based on beerology and user preferences. It will use Spring Boot & React architecture and nosql as the database backend with data distributed via docker containers.
+Project Description:
 
-This website aims to solve the central problem of the saturated microbrew market in Minnesota, in the United States. With so many options, it is difficult to select a beer one will like from a brewery let alone remember past selections.
+Website that provides brewery rankings. We aim to solve the central problem of the saturated microbrew market in Minnesota, in the United States. With so many options, it is difficult to select a beer one will like from a brewery let alone remember past selections.
 
 While there are existing services such as Untappd, they tend to focus on the mobile market and are less web oriented. This aims to fill that market gap.
-
-Dabbler will be built to help users select drinks from breweries they will likely enjoy based on their preferences. It will also remember which breweries the user has attended, and which drinks they enjoyed.
 
 This project is small-scale and highly localized, but may scale up if users become engaged with the website.
 
 Happy dabbling!
+
+
+Prerequisites to run website: Have java jdk install, have node.js installed. Have both in path accessible. 
+
+Step #1: To use the website, open code in IDE and build it. If build is successful, move onto step #2.
+
+Step #2: CD into Dabbler -> src -> frontend and run "npm install" to download dependencies.
+
+Step #3: Run Java back-end by running the java project
+
+Step #4: Run Java front end by running "npm start" from the frontend folder where node_modules where installed. 
+
 
 ~ Melo-velo
 ~ Davis-Anderson
