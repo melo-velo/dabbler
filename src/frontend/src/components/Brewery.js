@@ -19,9 +19,9 @@ const Brewery = () => {
         return(
             <>
             <div className='brewery-description-container'>
-                <p className='brewery-description-text'>Minnesota's top breweries of 2021</p>
+                <p className='brewery-description-text' id='rankings'>Minnesota's top breweries of 2021</p>
             </div>
-            <div className="brewery-grid" id='rankings'>
+            <div className="brewery-grid" >
                     {brewery.map( (brewery) =>
                         <div className="brewery-container">
                             <a href={brewery.url} className='brewery-link' target='_blank'>
