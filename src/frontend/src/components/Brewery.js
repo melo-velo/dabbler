@@ -5,16 +5,14 @@ import React, {useEffect, useState} from "react";
 const Brewery = () => {
     const url="api/v1/breweries"
     const [brewery, setBrewery] = useState(null)
-    // const [fix, setFix] = useState(false)
-
 
     useEffect(() => {
         axios.get(url)
             .then(response => {
                 setBrewery(response.data)
-                console.log(response.data)
+                // console.log(response.data)
             })
-    }, [])
+    }, )
 
 
     if(brewery){
