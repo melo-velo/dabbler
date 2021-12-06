@@ -10,9 +10,10 @@ const Brewery = () => {
         axios.get(url)
             .then(response => {
                 setBrewery(response.data)
-                console.log(response.data)
+                // console.log(response.data)
             })
-    }, [])
+    }, )
+
 
     if(brewery){
         return(
@@ -30,6 +31,7 @@ const Brewery = () => {
                             <h3>Most popular: {brewery.title}</h3>
                             <h3>Drink type: {brewery.type}</h3>
                             <h3>Known for: {brewery.drink}</h3>
+                            <h3>Beers on tap: {brewery.numberOfBeers}</h3>
                             </a>
                         </div>
                         )
