@@ -11,7 +11,7 @@ This project is small-scale and highly localized, but may scale up if users beco
 Happy dabbling!
 
 
-Prerequisites to run website: Have java jdk install, have node.js installed. Have both in path accessible. 
+Prerequisites to run website: Have java jdk, node.js installed.
 
 Step #1: To use the website, open code in IDE and build it. If build is successful, move onto step #2.
 
